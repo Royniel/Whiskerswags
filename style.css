@@ -1,0 +1,180 @@
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: black;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.carousel-caption p {
+  text-align: right;
+}
+
+.process .row .col-sm-3 img {
+  width: 100px;
+  height: 100px;
+}
+.content .carousel-caption p {
+  color: black;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer a {
+  color: white;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  color: #ddd;
+}
+
+
+
+.process-step {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 767px) {
+  .process-step {
+    margin-bottom: 30px;
+  }
+}
+
+
+.process-image {
+  max-height: 10%;
+  width: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .process-image {
+    max-height: 200px;
+  }
+}
+
+
+.services-section {
+  position: relative;
+}
+
+.central-image {
+  z-index: 2;
+  width: 200px;
+}
+
+.services-container {
+  position: relative;
+  height: 400px;
+}
+
+.service-item {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+}
+
+.top-left {
+  top: 0;
+  left: 50%;
+  transform: translate(-150%, -50%);
+}
+
+.top-right {
+  top: 0;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-150%, 50%);
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+.service-icon {
+  width: 50px;
+  margin-bottom: 8px;
+}
+
+.custom-bg {
+  background-color: #B97A57;
+  color: white;
+  padding: 15px;
+}
+
+.navbar {
+padding: 10px 0;
+}
+
+.navbar-brand img {
+max-height: 40px;
+}
+
+.purple-bg {
+background-color: #8a2be2;
+}
+
+.dropdown-menu.purple-bg {
+border: none;
+}
+
+.dropdown-menu.purple-bg .dropdown-item {
+color: white;
+}
+
+.dropdown-menu.purple-bg .dropdown-item:hover,
+.dropdown-menu.purple-bg .dropdown-item:focus {
+background-color: #9b4deb;
+}
+
+.navbar-nav .btn {
+padding: 0.375rem 0.75rem;
+}
+
+.overlay {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.7);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: white;
+opacity: 0;
+transition: opacity 0.5s ease;
+}
+
+.image-container:hover .overlay {
+opacity: 1;
+}
+
+.overlay h3 {
+font-size: 1.5rem;
+margin-bottom: 10px;
+}
+
+.overlay p {
+font-size: 1rem;
+text-align: center;
+}

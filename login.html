@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W&W</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="icon"  href="images/logo.jpg" sizes="32x32" >
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('images/dog&cat.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(-45deg, rgba(238,119,82,0.2), rgba(231,60,126,0.2), rgba(35,166,213,0.2), rgba(35,213,171,0.2));
+            background-size: 400% 400%;
+            z-index: -1;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            font-family: 'Dancing Script', cursive; 
+            color: #8a2be2;
+            font-size: 4rem; 
+            text-align: center;
+            margin-top: 20px; 
+            text-shadow: 2px 2px 8px #000;
+            animation: slideDown 1s ease-out;
+        }
+        .text-purple {
+            color: #8a2be2;
+        }
+
+        .header-link {
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .header-link:hover {
+            color: #8a2be2;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            height: calc(100% - 80px); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+        }
+
+        .form-signin {
+            background: rgba(255, 255, 255, 0.5); 
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 330px;
+            animation: scaleUp 0.5s ease-out forwards;
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .form-signin .form-control {
+            margin-bottom: 10px;
+            border: 0;
+            box-shadow: none;
+            border-radius: 20px;
+            padding: 15px 20px;
+            font-size: 16px;
+            background-color: rgba(250, 250, 250, 0.8);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-signin .form-control:focus {
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+
+        .form-signin .btn {
+            font-size: 1rem;
+            letter-spacing: 0.05rem;
+            padding: 0.75rem 1rem;
+            border-radius: 20px;
+            background-color: #8a2be2;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .form-signin .btn:hover {
+            background-color: #8a2be2;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-links {
+            margin-top: 10px;
+        }
+
+        .form-links a {
+            color: white;
+            text-decoration: none;
+            text-shadow: 1px 1px 4px #000;
+            transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+        }
+
+        .form-links a:hover {
+            color: #8a2be2;
+            text-shadow: none;
+            transform: translateY(-2px);
+        }s
+    </style>
+</head>
+<body>
+    <header>
+  <a href="home.html" class="text-purple header-link">Whiskers & Wags</a>
+</header>
+    <div class="container">
+        <form class="form-signin" onsubmit="return validateLogin()">
+            <h2 class="h3 mb-3 font-weight-normal" style="color:purple;">Login🐾</h2>
+            <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+            <div id="Usernameerror" class="invalid-feedback" style="display: none;">Please enter a valid Email</div>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div id="PasswordError" class="invalid-feedback" style="display: none;">Please enter a valid Password</div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <div class="form-links">
+                <a href="forgetpassword.html">Forgot password?</a>
+                <br>
+                <p>Don't have a paw-some account yet? </p>
+                <a href="signup.html"> Sign up now!</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

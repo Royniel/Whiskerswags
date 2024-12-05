@@ -1,0 +1,58 @@
+.approval-card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(33.33% - 40px);
+
+  box-sizing: border-box;
+  color: black;
+}
+
+.pet-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.card-content {
+  margin-bottom: 20px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.approve-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.approve-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button:hover {
+  background-color: #e41e1e;
+}

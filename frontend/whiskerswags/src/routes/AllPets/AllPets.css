@@ -1,0 +1,50 @@
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-buttons button {
+    background: #0095D5;
+    box-shadow: 0 0 8px rgba(67, 110, 141, 0.37);
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 15px 26px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 0 8px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.filter-buttons button:hover {
+    background: #007bb5; 
+}
+
+.filter-buttons button.active {
+    background: #007bb5;
+    color: #FFFFFF;
+}
+
+body {
+    background: #E3F3FF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrap {
+    max-width: 784px;
+    margin: 50px auto 0;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1.2;
+    color: #094067;
+}

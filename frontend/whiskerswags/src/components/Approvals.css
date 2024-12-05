@@ -1,0 +1,15 @@
+.approvals-container {
+  padding: 20px;
+}
+
+.approvals-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}

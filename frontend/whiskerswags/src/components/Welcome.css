@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.welcome-container {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-block {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-block:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.stat-block:nth-child(1):after {
+    background-color: #0096D5; 
+}
+
+.stat-block:nth-child(2):after {
+    background-color: #0AC61D; 
+}
+
+.stat-block:nth-child(3):after {
+    background-color: #EAB408; 
+}
+
+.stat-block h2 {
+    margin: 10px 0 0;
+    font-size: 2em;
+    color: #0095D5;
+}
+
+.stat-block p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #777;
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 2em;
+    color: #333;
+}
+
+.animal-types-table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1500px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #464646;
+}
+
+.animal-types-table th,
+.animal-types-table td {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: left;
+}
+
+.animal-types-table th {
+    background-color: #0095D5;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.animal-types-table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.animal-types-table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.animal-types-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.animal-types-table tr:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <title>W&W</title>
+    <link rel="icon"  href="images/logo.jpg" sizes="32x32" >
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .content .carousel-caption p {
+            color: black;
+            font-weight:normal;
+            background-color: rgba(255, 255, 255, 0.7);
+            justify-content: right;
+            
+        }
+
+        .content .position-relative img {
+        height: 80%;
+        width: 100%;
+    }
+
+    .navbar-custom {
+            background: linear-gradient(45deg, #8A2BE2, #4169E1);
+        }
+
+
+    .navbar-logo {
+    width: 5%; 
+    height: auto; 
+}
+
+h1 {
+    color: #8a2be2; 
+    text-align: center;
+}
+
+    
+
+.footer {
+    background-color: #666;
+    padding: 40px 0;
+}
+
+.footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fffdfd;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 10px 0;
+
+  }
+
+  .navbar-nav {
+        margin-left: -15px;
+    }
+    
+    .navbar-nav .nav-item .nav-link:hover {
+        color: #8a2be2;
+        font-weight: 500;        
+    }
+
+ 
+    .image-container {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image-container img {
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    width: 100%;
+    height: 34%;
+    transition: .5s ease;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.image-container:hover .overlay {
+    height: 100%;
+}
+  
+.text-container,.gradient {
+    background: radial-gradient(circle, rgba(138,43,226,0.7) 0%, rgba(138,43,226,0.5) 50%, rgba(138,43,226,0.3) 100%);
+    border-radius: 8px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.text-responsive {
+    font-size: calc(14px + 0.3vw);
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        max-width: 80%;
+    }
+
+    .text-container {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    .text-container {
+        padding: 15px;
+    }
+}
+
+.bg-custom-radial {
+    background-image: radial-gradient(circle, rgba(138,43,226,1) 0%, rgba(138,43,226,0.8) 50%, rgba(138,43,226,0.6) 100%);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.gradient-bg {
+    background-image: linear-gradient(to right, #8a2be2, #ac78dc);
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.bg-light-purple {
+    background-color: rgba(62, 161, 218, 0.2);
+}
+
+.custom-brand {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.custom-brand:hover {
+      color: #f8f9fa !important;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      transform: scale(1.05);
+}
+
+#scrollToTopBtn {
+    z-index: 9999;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    opacity: 1;
+}
+
+</style>
+</head>
+
+<body>
+
+<!---------------------- Navbar-------------------->
+<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, #7f00ff, #00b4db);">
+  <div class="container">
+      <img src="images/logo.jpg" class="navbar-logo" style="margin-right: 25px;">
+      <a class="navbar-brand text-white fw-bold fs-1 fst-italic position-relative custom-brand" href="#">
+        Whiskers & Wags
+    </a>
+      <button class="btn btn-outline-light ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+        <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-end bg-light-purple" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title" style="color: white;" id="offcanvasMenuLabel"><b><i><u>MENU</u></i></b></h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="home.html"><b>Home</b></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#about"><b>About Us</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="#apply"><b>How to apply</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="#carouselExampleCaptions"><b>Pets for adoption</b></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#services"><b>Services</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="#testimonialsCarousel"><b>Testimonials</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="#faq"><b>FAQ's</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="#contact"><b>Contact info</b></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="login.html"><b>Login</b></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="signup.html"><b>Sign Up</b></a>
+          </li>
+      </ul>
+  </div>
+</div>
+
+
+ <!------------------------Home Page-----------------------> 
+
+ <div id="about" class="content">
+  <div class="image-container">
+      <img src="images/image3.webp" class="img-fluid w-100" alt="Adoptable pets">
+  </div>
+  <div class="text-container mt-3 p-3">
+      <p class="text-responsive">
+          Our furry companions are eagerly waiting for their forever homes, each with a unique personality and heartwarming story to share. At Whiskers & Wags, we are passionately dedicated to promoting animal welfare and fostering strong, loving bonds between pets and their owners. By adopting a friend, you open your heart to the unconditional love and companionship they offer. Together, we can make a meaningful difference in the lives of these deserving animals, creating brighter futures filled with joy, laughter, and loyalty. Join us in this noble journey of compassion and commitment—let's give our furry friends the loving homes they deserve!
+      </p>
+  </div>
+</div>
+
+ <!---------------------Process---------------------------->
+
+ <div id="apply" class="container my-5">
+
+  <h1 class="my-5"> How to apply for a Pet</h1>
+
+    <div class="row align-items-center mb-4">
+      <div class="col-md-6">
+        <h3> <span style="color: #8a2be2;">1.</span> 
+          <span style="color: #8a2be2;">Choose Pet</span></h3>
+          <p class="p-3 text-white bg-custom-radial">Choose the pet you want to adopt and check the details such as age, health status, and ask all those questions you have so that this experience is successful and wonderful.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="images/hands1.png" class="img-fluid" alt="...">
+      </div>
+    </div>
+    
+    <div class="row align-items-center mb-4">
+      <div class="col-md-6 order-md-2">
+        <h3><span style="color: #8a2be2;">2.</span> 
+          <span style="color: #8a2be2;">Application Form</span></h3>
+          <p class="p-3 text-white bg-custom-radial">Fill in the complete information in the adoption process, remember that this step is the most important of all.</p>
+      </div>
+      <div class="col-md-6 order-md-1">
+        <img src="images/catw1.png" class="img-fluid" style="max-width: 105%; height: auto;" alt="...">
+      </div>
+    </div>
+  
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h3><span style="color: #8a2be2;">3.</span> 
+          <span style="color: #8a2be2;">Take Pet Home</span></h3>
+          <p class="p-3 text-white bg-custom-radial">Take your pet home with you and start a new phase of your life accompanied by a loyal friend who will always be there for you.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="images/leash1.png" class="img-fluid" alt="...">
+      </div>
+    </div>
+  </div>
+
+
+<!---------------------- Adoptable Pets-------------------->
+<div id="carouselExampleCaptions" class="carousel slide">
+  <h1 class="my-5"> Adoptable Pets</h1>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/cars1.jpg" class="d-block mx-auto" style="width: 400px; height: 350px;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Boxie </h5>
+          <p>Breed Age:4 yrs- Male.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/caras2.jpg" class="d-block mx-auto" style="width: 400px; height: 350px; " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Fifi</h5>
+          <p>Breed Age:5 yrs- Female.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/cat.jpg" class="d-block mx-auto" style="width: 400px; height: 350px;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Maya</h5>
+          <p>Breed Age:3 yrs- Female.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!-----------------------------Services------------------------------------>
+<h1 class="my-5">Services</h1>
+<div id="services" class="container text-center">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="col">
+      <div class="image-container">
+        <img src="images/dog_training_services.jpg.webp" class="img-fluid" alt="Training & Behavior">
+        <div class="overlay">
+          <h3>Training & Behavior</h3>
+          <p>Expert-led training sessions to help your pet develop good behavior and obedience skills.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="image-container">
+        <img src="images/health.jpg" class="img-fluid" alt="Pet Health Care">
+        <div class="overlay">
+          <h3>Pet Health Care</h3>
+          <p>Comprehensive veterinary services to ensure your pet's health and well-being.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="image-container">
+        <img src="images/shelter.webp" class="img-fluid" alt="Pet Shelters">
+        <div class="overlay">
+          <h3>Pet Shelters</h3>
+          <p>Safe and comfortable shelters for pets awaiting their forever homes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="col">
+      <div class="image-container">
+        <img src="images/shop.jpg" class="img-fluid" alt="Pet Shops">
+        <div class="overlay">
+          <h3>Pet Shops</h3>
+          <p>Quality pet supplies, food, and accessories to keep your furry friends happy and healthy.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="image-container">
+        <img src="images/grooming.jpg" class="img-fluid" alt="Pet Grooming">
+        <div class="overlay">
+          <h3>Pet Grooming</h3>
+          <p>Professional grooming services to keep your pets clean, comfortable, and looking their best.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="image-container">
+        <img src="images/insurance.jpg" class="img-fluid" alt="Pet Insurance">
+        <div class="overlay">
+          <h3>Pet Insurance</h3>
+          <p>Affordable pet insurance plans to protect your furry family members and give you peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----------------------------testimonials---------------------------------->
+
+<h1 class="my-5">Testimonials</h1>
+<div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card p-3 text-center">
+                <img src="images/male.jpeg" class="rounded-circle mb-3 mx-auto" width="80">
+                <h5 class="mb-0" style="color: #8a2be2;">Mark Smith</h5>
+                <span>Adopted a Cat</span>
+                <p class="gradient-bg p-3 mb-3 rounded">
+                    I adopted a beautiful cat from Whiskers&Wags, and it has brought so much joy into my life.
+                    The adoption process was seamless, and the staff was incredibly helpful throughout. I couldn't
+                    be happier with my new furry friend!
+                </p>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card p-3 text-center">
+                <img src="images/female.jpg" class="rounded-circle mb-3 mx-auto" width="80">
+                <h5 class="mb-0" style="color: #8a2be2;">Veera Duncan</h5>
+                <span>Adopted a Rabbit</span>
+                <p class="gradient-bg p-3 mb-3 rounded">
+                    Adopting a rabbit from Whiskers&Wags was one of the best decisions I've ever made.
+                    The team was incredibly knowledgeable and helped me find the perfect match for my family.
+                    Our new rabbit has brought so much love and laughter into our home!
+                </p>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card p-3 text-center">
+                <img src="images/young-man.avif" class="rounded-circle mb-3 mx-auto" width="80">
+                <h5 class="mb-0" style="color: #8a2be2;">Bruce Hardy</h5>
+                <span>Adopted a Dog</span>
+                <p class="gradient-bg p-3 mb-3 rounded">
+                    I adopted a lovely dog from Whiskers&Wags, and it has been the best decision of my life.
+                    The process was smooth, and the team was very supportive. From the initial application to bringing
+                    my new furry friend home, every step was handled with care and professionalism.
+                </p>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+  <!----------------------faqs--------------------------------------------->
+
+ <div id="faq"> 
+<h1 class="my-5">FAQ's About Our Services</h1>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" style="color:#8a2be2;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        How do I adopt a pet?
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body" style="background-color:#ac78dc; color: #fff;">To adopt a pet from Paws&Tails, you can visit our website or contact us directly. We'll guide you through the adoption process and help you find the perfect pet for your home..</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" style="color:#8a2be2;"type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        What are the requirements for adoption?
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body" style="background-color:#ac78dc; color: #fff;">The requirements for pet adoption may vary, but typically include providing a loving and stable home environment, ensuring proper care and nutrition for the pet, and adhering to any specific adoption policies set by Paws&Tails</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" style="color:#8a2be2;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        How long does the pet adoption process take?
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body" style="background-color:#ac78dc; color: #fff;">The time it takes to complete the pet adoption process can vary depending on factors such as the availability of the desired pet, completion of required paperwork, and any necessary home visits. Generally, the process can take anywhere from a few days to a couple of weeks. Our team at Paws&Tails is dedicated to making the process as efficient and smooth as possible for both the adopter and the pet.</div>
+    </div>
+  </div>
+</div>
+  </div>
+
+<!------------------------------Footer-------------------------------------->
+
+<footer class="footer mt-5">
+    <div id="contact" class="container">
+        <div class="row">
+            
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div id="contact" class="col-md-4">
+                <h5>Contact Us</h5>
+                <p><i class="fas fa-phone"></i>   Phone:<a href="tel:+ +1-678-234-8906" class="link-input" id="phone"> +1-123-456-7890</a></p>
+                <p><i class="fas fa-envelope"></i>   Email us: <a href="mailto:paws&tails@email.com" class="link-input" id="email">whiskers&wags@email.com</a></p>
+               
+            </div>
+            <div class="col-md-4">
+                <h5>Office Hours</h5>
+                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                <p>Saturday: 10:00 AM - 2:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom text-center">
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </div>
+</footer>
+<button id="scrollToTopBtn" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3" style="display: none;">
+  <i class="fas fa-arrow-up"></i>
+</button>
+<script>
+  // Show/hide scroll-to-top button based on scroll position
+  window.onscroll = function() {
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+      } else {
+          scrollToTopBtn.style.display = "none";
+      }
+  };
+
+  // Scroll to top when button is clicked
+  document.getElementById("scrollToTopBtn").onclick = function() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  };
+</script>
+</body>
+</html>

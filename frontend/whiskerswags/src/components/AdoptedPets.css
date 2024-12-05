@@ -1,0 +1,54 @@
+.adopted-pets-container {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.adopted-pets-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.adopted-pet-card {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: calc(33.33% - 40px);
+    box-sizing: border-box;
+}
+
+.adopted-pet-card h3{
+    color: black;
+}
+
+.pet-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-content {
+    text-align: left;
+}
+
+.card-content h3 {
+    margin: 0 0 10px;
+}
+
+.card-content p {
+    margin: 5px 0;
+}
